@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mother's Day Brief — Salt & Lime</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#1D9E75;--green-dim:#0F6E56;--green-bright:#5DCAA5;--green-glow:rgba(29,158,117,0.1);
+  --leaf:#97C459;--leaf-dim:rgba(151,196,89,0.12);
+  --bg:#0e0e0e;--bg2:#161616;--bg3:#1e1e1e;--bg4:#252525;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
+  --text:#f0f0ee;--muted:#888884;--faint:#4a4a46;
+  --blue:#60a5fa;--blue-dim:rgba(96,165,250,0.1);
+  --amber:#fbbf24;--amber-dim:rgba(251,191,36,0.1);
+  --rust:#fb923c;--rust-dim:rgba(251,146,60,0.1);
+}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+
+/* HEADER */
+.site-header{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 2rem;height:52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.header-left{display:flex;align-items:center;gap:16px}
+.pm-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+.pm-icon{width:28px;height:28px;background:var(--green);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pm-icon svg{width:15px;height:15px}
+.pm-wordmark{font-size:14px;font-weight:600;color:var(--text);letter-spacing:-0.01em}
+.hd{width:1px;height:18px;background:var(--border2)}
+.header-doc{font-size:13px;color:var(--muted)}
+.header-pill{font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:var(--green-glow);color:var(--green-bright);border:1px solid rgba(29,158,117,0.25)}
+
+/* HERO */
+.hero{border-bottom:1px solid var(--border);padding:3.5rem 2rem 3rem;background:linear-gradient(180deg,rgba(29,158,117,0.06) 0%,transparent 100%)}
+.hero-inner{max-width:760px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--green-bright);margin-bottom:1.25rem}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--green);display:inline-block;border-radius:2px}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,5vw,3.2rem);font-weight:400;line-height:1.1;color:var(--text);margin-bottom:0.75rem}
+.hero-sub{font-size:15px;color:var(--muted);margin-bottom:1.75rem}
+.meta-pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-size:12px;font-weight:500;padding:5px 12px;border-radius:99px;border:1px solid var(--border2);color:var(--muted);background:var(--bg3)}
+.pill.green{background:var(--green-glow);color:var(--green-bright);border-color:rgba(29,158,117,0.3)}
+.pill.amber{background:var(--amber-dim);color:var(--amber);border-color:rgba(251,191,36,0.25)}
+
+/* BODY */
+.body{max-width:760px;margin:0 auto;padding:2.5rem 2rem 5rem}
+.section{margin-bottom:2.5rem}
+.section-label{font-size:11px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--faint);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border)}
+
+/* OFFER */
+.offer-block{background:var(--green-glow);border:1px solid rgba(29,158,117,0.25);border-left:3px solid var(--green);border-radius:12px;padding:1.5rem}
+.offer-block h2{font-family:'DM Serif Display',serif;font-size:1.5rem;font-weight:400;color:var(--text);margin-bottom:0.6rem}
+.offer-block p{font-size:14px;color:var(--green-bright);line-height:1.65}
+
+/* STRATEGY */
+.strategy-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.strategy-grid{grid-template-columns:1fr}}
+.strategy-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.25rem}
+.strategy-card h3{font-size:14px;font-weight:600;color:var(--text);margin-bottom:6px}
+.strategy-card p{font-size:13px;color:var(--muted);line-height:1.6}
+.type-badge{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;display:block}
+.type-badge.existing{color:var(--blue)}
+.type-badge.new{color:var(--leaf)}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:5px;margin-top:12px}
+.flow-step{font-size:11px;font-weight:500;background:var(--leaf-dim);color:var(--leaf);padding:4px 10px;border-radius:99px;border:1px solid rgba(151,196,89,0.2)}
+.flow-arrow{font-size:11px;color:var(--faint)}
+
+/* DELIVERABLES */
+.deliverable{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:10px}
+.deliverable-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.d-badge{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:3px 9px;border-radius:99px;flex-shrink:0}
+.d-badge.email{background:var(--blue-dim);color:var(--blue)}
+.d-badge.sms{background:var(--leaf-dim);color:var(--leaf)}
+.d-badge.social{background:var(--rust-dim);color:var(--rust)}
+.d-badge.action{background:var(--amber-dim);color:var(--amber)}
+.deliverable h3{font-size:15px;font-weight:600;color:var(--text)}
+.deliverable p{font-size:13px;color:var(--muted);margin-bottom:10px;line-height:1.65}
+.copy-label{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:6px;display:block;margin-top:12px}
+.copy-block{background:var(--bg3);border:1px solid var(--border);border-left:2px solid var(--border2);border-radius:8px;padding:12px 14px;font-size:13px;color:var(--text);line-height:1.7;font-style:italic}
+.alert{background:var(--amber-dim);border:1px solid rgba(251,191,36,0.2);border-radius:8px;padding:11px 14px;font-size:13px;color:var(--amber);line-height:1.6;margin-top:12px}
+
+/* NOTE */
+.note-block{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;font-size:13px;color:var(--muted);line-height:1.7}
+.brand-swatches{display:flex;gap:12px;margin-bottom:10px}
+.brand-swatch{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--muted)}
+.swatch{width:14px;height:14px;border-radius:50%;display:inline-block}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:1.25rem 2rem;max-width:760px;margin:0 auto;font-size:12px;color:var(--faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.footer-pm{display:flex;align-items:center;gap:6px}
+.footer-dot{width:4px;height:4px;background:var(--green);border-radius:50%}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-left">
+    <a class="pm-logo" href="https://popmenu.com" target="_blank" rel="noopener">
+      <div class="pm-icon">
+        <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 7H7a2 2 0 0 0-2 2v10h2v-4h4a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zm0 6H7V9h4v4zm8-6h-4a2 2 0 0 0-2 2v10h2v-4h2v4h2V9a2 2 0 0 0-2-2zm0 6h-4V9h4v4z"/>
+        </svg>
+      </div>
+      <span class="pm-wordmark">Popmenu</span>
+    </a>
+    <div class="hd"></div>
+    <span class="header-doc">Campaign Brief</span>
+  </div>
+  <div>
+    <span class="header-pill">Mother's Day 2026</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Salt &amp; Lime Modern Mexican Grill</div>
+    <h1>Mother's Day<br>Campaign</h1>
+    <p class="hero-sub">May 10, 2026 &nbsp;·&nbsp; Dine-in only &nbsp;·&nbsp; All 3 locations</p>
+    <div class="meta-pills">
+      <span class="pill">Sig Oximar</span>
+      <span class="pill">Requested by Daniel</span>
+      <span class="pill amber">Add to May calendar ASAP</span>
+      <span class="pill green">Boost+ &amp; Social 12</span>
+    </div>
+  </div>
+</div>
+
+<div class="body">
+
+  <div class="section">
+    <p class="section-label">The Offer</p>
+    <div class="offer-block">
+      <h2>$1 margaritas for mom — dine-in only, May 10th</h2>
+      <p>Redemption: show a photo of your kids on your phone. Easy, warm, no friction. Make this explicit in every piece of content so guests know exactly what to expect before they arrive.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">Strategy — two audiences, two jobs</p>
+    <div class="strategy-grid">
+      <div class="strategy-card">
+        <span class="type-badge existing">Existing followers</span>
+        <h3>Email + SMS</h3>
+        <p>Goes to people already in the list. Job is to remind regulars and bring them back in on May 10. They know Salt &amp; Lime — they just need the nudge.</p>
+      </div>
+      <div class="strategy-card">
+        <span class="type-badge new">New follower acquisition</span>
+        <h3>Social</h3>
+        <p>Reaches people outside the list. CTA drives them to sign up as a VIP on the website. Once they sign up, the offer lands automatically via the welcome email.</p>
+        <div class="flow">
+          <span class="flow-step">See post</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">Sign up as VIP</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">Get offer by email</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">Redeem by May 10</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">Deliverables</p>
+
+    <div class="deliverable">
+      <div class="deliverable-header">
+        <span class="d-badge email">Email</span>
+        <h3>1 dedicated Mother's Day email — existing followers</h3>
+      </div>
+      <p>Hero visual with $1 marg offer front and center. Call out the photo-proof redemption clearly. CTA = come in May 10, dine-in only. Tie in "Moms, Dads &amp; Grads" gift cards if space allows.</p>
+      <span class="copy-label">Subject line</span>
+      <div class="copy-block">"Mom deserves a $1 marg (we're serious) 🌿"</div>
+      <span class="copy-label">Body note to include</span>
+      <div class="copy-block">"Just show us a photo of your kids when you arrive — that's all the proof we need. First margarita is $1, on us."</div>
+    </div>
+
+    <div class="deliverable">
+      <div class="deliverable-header">
+        <span class="d-badge sms">SMS</span>
+        <h3>1 Mother's Day SMS — existing followers</h3>
+      </div>
+      <p>Short and urgent. Redemption mechanic in the copy. Send 1–2 days before or day-of May 10.</p>
+      <span class="copy-label">SMS copy</span>
+      <div class="copy-block">"Mom gets $1 margaritas this Sunday at Salt &amp; Lime 🌮 Show us a photo of your kids. Dine-in only, May 10."</div>
+    </div>
+
+    <div class="deliverable">
+      <div class="deliverable-header">
+        <span class="d-badge social">Social</span>
+        <h3>1–2 posts — new follower acquisition</h3>
+      </div>
+      <p>Different job from email/SMS — drives people to sign up as VIPs on the website to unlock the offer. CTA is "sign up to get the deal," not just "come in." Post ASAP — more time live = more sign-ups before May 10. Reel idea: moms showing off their kid photos at the bar to claim the deal.</p>
+      <span class="copy-label">Caption idea</span>
+      <div class="copy-block">"Moms eat (and drink) free-ish this Mother's Day 💚 Sign up as a VIP at saltandlimeaz.com to get the exclusive offer straight to your inbox. $1 margaritas, dine-in only, May 10. All locations."</div>
+    </div>
+
+    <div class="deliverable">
+      <div class="deliverable-header">
+        <span class="d-badge action">Action needed</span>
+        <h3>Confirm VIP welcome email has the offer loaded</h3>
+      </div>
+      <p>Not new content — this is the existing Popmenu welcome automation. It needs the $1 marg offer attached so new sign-ups receive it the moment they join. Coordinate with CSM Maddie Hack before the social post goes live. Campaign window: now through May 10.</p>
+      <div class="alert">⚠ Before social goes live — if the welcome email doesn't have the offer loaded, new sign-ups get nothing and the acquisition loop breaks. Confirm with Maddie first.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">Brand direction</p>
+    <div class="note-block">
+      <div class="brand-swatches">
+        <span class="brand-swatch"><span class="swatch" style="background:#22c55e"></span>Bright green</span>
+        <span class="brand-swatch"><span class="swatch" style="background:#8b5cf6"></span>Vibrant purple</span>
+      </div>
+      Sandra loves the loudness — no pastels, no soft Mother's Day pink. Think festive, modern Mexican, unapologetically bold. Floral or fiesta-inspired visuals welcome. Push the colors.
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">Context for Sig</p>
+    <div class="note-block">
+      Confirmed with Sandra directly on April 16. May content is already in production — weave this in. Cave Creek also has Cinco de Mayo live music planned, so it's a festive, high-energy month. The social post needs to go out ASAP — more time live = more new sign-ups before May 10. Sandra is open to bold creative ideas; feel free to run with it within the offer details above.
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-pm">
+    <div class="footer-dot"></div>
+    <span>Popmenu &nbsp;·&nbsp; Salt &amp; Lime Modern Mexican Grill</span>
+  </div>
+  <span>Daniel Rodrigues &nbsp;·&nbsp; April 16, 2026</span>
+</footer>
+
+</body>
+</html>
