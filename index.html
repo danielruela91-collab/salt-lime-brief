@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mother's Day Campaign — Pick a Strategy · Salt & Lime</title>
+<title>Mother's Day Social Post — Pick a Strategy · Salt & Lime</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --green:#1D9E75;--green-dim:#0F6E56;--green-bright:#5DCAA5;--green-glow:rgba(29,158,117,0.1);
+  --green:#1D9E75;--green-bright:#5DCAA5;--green-glow:rgba(29,158,117,0.1);
   --leaf:#97C459;--leaf-dim:rgba(151,196,89,0.12);
-  --bg:#0e0e0e;--bg2:#161616;--bg3:#1e1e1e;--bg4:#252525;
+  --bg:#0e0e0e;--bg2:#161616;--bg3:#1e1e1e;
   --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
   --text:#f0f0ee;--muted:#888884;--faint:#4a4a46;
   --blue:#60a5fa;--blue-dim:rgba(96,165,250,0.1);
@@ -18,83 +18,78 @@
   --rust:#fb923c;--rust-dim:rgba(251,146,60,0.1);
   --purple:#a78bfa;--purple-dim:rgba(167,139,250,0.1);
 }
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;min-height:100vh;font-size:16px}
 
 /* HEADER */
-.site-header{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 2rem;height:52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.site-header{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 2rem;height:54px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .header-left{display:flex;align-items:center;gap:16px}
 .pm-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
-.pm-icon{width:28px;height:28px;background:var(--green);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.pm-icon svg{width:15px;height:15px}
-.pm-wordmark{font-size:14px;font-weight:600;color:var(--text);letter-spacing:-0.01em}
+.pm-icon{width:30px;height:30px;background:var(--green);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pm-icon svg{width:16px;height:16px}
+.pm-wordmark{font-size:15px;font-weight:600;color:var(--text);letter-spacing:-0.01em}
 .hd{width:1px;height:18px;background:var(--border2)}
-.header-doc{font-size:13px;color:var(--muted)}
-.header-pill{font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:var(--amber-dim);color:var(--amber);border:1px solid rgba(251,191,36,0.25)}
+.header-doc{font-size:14px;color:var(--muted)}
+.header-pill{font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:5px 12px;border-radius:99px;background:var(--amber-dim);color:var(--amber);border:1px solid rgba(251,191,36,0.25)}
 
 /* HERO */
-.hero{border-bottom:1px solid var(--border);padding:3rem 2rem 2.5rem;background:linear-gradient(180deg,rgba(29,158,117,0.05) 0%,transparent 100%)}
-.hero-inner{max-width:860px;margin:0 auto}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--green-bright);margin-bottom:1rem}
+.hero{border-bottom:1px solid var(--border);padding:3.5rem 2rem 3rem;background:linear-gradient(180deg,rgba(29,158,117,0.05) 0%,transparent 100%)}
+.hero-inner{max-width:900px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--green-bright);margin-bottom:1.1rem}
 .eyebrow::before{content:'';width:20px;height:2px;background:var(--green);display:inline-block;border-radius:2px}
-h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4.5vw,2.8rem);font-weight:400;line-height:1.1;color:var(--text);margin-bottom:0.6rem}
-.hero-sub{font-size:14px;color:var(--muted);margin-bottom:1.5rem;max-width:560px}
-.instruction-bar{background:var(--amber-dim);border:1px solid rgba(251,191,36,0.2);border-radius:10px;padding:12px 16px;display:inline-flex;align-items:center;gap:10px;font-size:13px;color:var(--amber)}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,5vw,3.2rem);font-weight:400;line-height:1.08;color:var(--text);margin-bottom:0.8rem}
+.hero-sub{font-size:17px;color:var(--muted);margin-bottom:0.6rem;max-width:620px;line-height:1.6}
+.the-offer{font-size:15px;color:var(--green-bright);margin-bottom:1.75rem}
+.instruction-bar{background:var(--amber-dim);border:1px solid rgba(251,191,36,0.2);border-radius:10px;padding:13px 18px;display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--amber);line-height:1.5}
 .instruction-bar strong{font-weight:600}
 
 /* BODY */
-.body{max-width:860px;margin:0 auto;padding:2.5rem 2rem 5rem}
+.body{max-width:900px;margin:0 auto;padding:2.5rem 2rem 5rem}
 
-/* OFFER CONTEXT */
-.offer-context{background:var(--green-glow);border:1px solid rgba(29,158,117,0.2);border-left:3px solid var(--green);border-radius:10px;padding:1.1rem 1.25rem;margin-bottom:2.5rem;font-size:13px;color:var(--green-bright);line-height:1.65}
-.offer-context strong{color:var(--text);font-weight:600}
+/* CARDS */
+.strategies{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:660px){.strategies{grid-template-columns:1fr}}
 
-/* STRATEGY CARDS */
-.strategies{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media(max-width:640px){.strategies{grid-template-columns:1fr}}
-
-.strategy{background:var(--bg2);border:2px solid var(--border);border-radius:14px;padding:1.5rem;cursor:pointer;transition:border-color .15s,background .15s;position:relative;user-select:none}
+.strategy{background:var(--bg2);border:2px solid var(--border);border-radius:16px;padding:1.75rem;cursor:pointer;transition:border-color .15s,background .15s;position:relative;user-select:none;display:flex;flex-direction:column;gap:0}
 .strategy:hover{border-color:var(--border2)}
 .strategy.selected{border-color:var(--green) !important;background:rgba(29,158,117,0.06)}
+.strategy.selected .num{color:var(--green)}
 .strategy.selected .select-ring{background:var(--green);border-color:var(--green)}
 .strategy.selected .select-ring::after{opacity:1}
 
-/* number + ring */
-.card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1rem}
-.num{font-family:'DM Serif Display',serif;font-size:2rem;line-height:1;color:var(--faint)}
-.strategy.selected .num{color:var(--green)}
-.select-ring{width:22px;height:22px;border-radius:50%;border:2px solid var(--border2);background:transparent;flex-shrink:0;position:relative;transition:all .15s;margin-top:2px}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.1rem}
+.num{font-family:'DM Serif Display',serif;font-size:2.2rem;line-height:1;color:var(--faint);transition:color .15s}
+.select-ring{width:24px;height:24px;border-radius:50%;border:2px solid var(--border2);background:transparent;flex-shrink:0;position:relative;transition:all .15s;margin-top:3px}
 .select-ring::after{content:'';position:absolute;inset:4px;background:white;border-radius:50%;opacity:0;transition:opacity .15s}
 
-.complexity-badge{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:3px 9px;border-radius:99px;display:inline-block;margin-bottom:10px}
-.complexity-badge.high{background:var(--rust-dim);color:var(--rust)}
-.complexity-badge.medium{background:var(--amber-dim);color:var(--amber)}
-.complexity-badge.low{background:var(--leaf-dim);color:var(--leaf)}
-.complexity-badge.soft{background:var(--blue-dim);color:var(--blue)}
+.approach-badge{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:4px 11px;border-radius:99px;display:inline-block;margin-bottom:12px}
+.approach-badge.open{background:var(--leaf-dim);color:var(--leaf)}
+.approach-badge.coded{background:var(--rust-dim);color:var(--rust)}
+.approach-badge.locked-specific{background:var(--blue-dim);color:var(--blue)}
+.approach-badge.locked-all{background:var(--purple-dim);color:var(--purple)}
 
-.strategy h2{font-size:15px;font-weight:600;color:var(--text);margin-bottom:6px;line-height:1.35}
-.strategy .desc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:1rem}
+.strategy h2{font-size:17px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.35}
+.strategy .desc{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:1.25rem}
 
-.how-label{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:6px;display:block}
-.flow{display:flex;flex-wrap:wrap;align-items:center;gap:5px;margin-bottom:1rem}
-.flow-step{font-size:11px;font-weight:500;background:var(--bg3);color:var(--muted);padding:4px 10px;border-radius:99px;border:1px solid var(--border)}
-.flow-arrow{font-size:11px;color:var(--faint)}
+.question-block{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:1.25rem}
+.question-label{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:6px;display:block}
+.question-text{font-size:14px;color:var(--text);line-height:1.6;font-style:italic}
 
-.pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto}
-.pro,.con{font-size:12px;padding:8px 10px;border-radius:8px;line-height:1.5}
-.pro{background:rgba(29,158,117,0.07);color:var(--green-bright)}
-.pro::before{content:'+ ';font-weight:700}
-.con{background:rgba(251,191,36,0.07);color:var(--amber)}
-.con::before{content:'− ';font-weight:700}
+.tradeoffs{display:flex;flex-direction:column;gap:7px;margin-top:auto}
+.tradeoff{font-size:14px;padding:9px 12px;border-radius:9px;line-height:1.5;display:flex;align-items:flex-start;gap:8px}
+.tradeoff.up{background:rgba(29,158,117,0.07);color:var(--green-bright)}
+.tradeoff.up::before{content:'↑';font-weight:700;flex-shrink:0}
+.tradeoff.down{background:rgba(251,191,36,0.07);color:var(--amber)}
+.tradeoff.down::before{content:'↓';font-weight:700;flex-shrink:0}
 
 /* SELECTED SUMMARY */
-.summary-bar{margin-top:2rem;border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;background:var(--bg2);display:none}
+.summary-bar{margin-top:1.75rem;border:2px solid var(--green);border-radius:14px;padding:1.5rem 1.75rem;background:rgba(29,158,117,0.06);display:none}
 .summary-bar.visible{display:block}
-.summary-bar h3{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px}
-.summary-bar p{font-size:13px;color:var(--muted)}
-.summary-title{font-size:11px;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+.summary-bar-label{font-size:11px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--green-bright);margin-bottom:8px;display:block}
+.summary-bar h3{font-size:17px;font-weight:600;color:var(--text);margin-bottom:6px}
+.summary-bar p{font-size:15px;color:var(--muted);line-height:1.65}
 
 /* FOOTER */
-footer{border-top:1px solid var(--border);padding:1.25rem 2rem;max-width:860px;margin:0 auto;font-size:12px;color:var(--faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+footer{border-top:1px solid var(--border);padding:1.5rem 2rem;max-width:900px;margin:0 auto;font-size:13px;color:var(--faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
 .footer-pm{display:flex;align-items:center;gap:6px}
 .footer-dot{width:4px;height:4px;background:var(--green);border-radius:50%}
 </style>
@@ -115,141 +110,114 @@ footer{border-top:1px solid var(--border);padding:1.25rem 2rem;max-width:860px;m
     <span class="header-doc">Campaign Brief</span>
   </div>
   <div>
-    <span class="header-pill">Pick a Strategy</span>
+    <span class="header-pill">Kaese — Pick one</span>
   </div>
 </header>
 
 <div class="hero">
   <div class="hero-inner">
     <div class="eyebrow">Salt &amp; Lime · Mother's Day 2026</div>
-    <h1>Four ways to run<br>the $1 margarita campaign</h1>
-    <p class="hero-sub">Each approach has a different level of setup, tracking, and Popmenu involvement. Kaese — pick the one that fits.</p>
+    <h1>What does the<br>social post say?</h1>
+    <p class="hero-sub">The offer is set. The question is what we ask people to <em>do</em> when they see it — and how much setup that requires on the Popmenu side.</p>
+    <p class="the-offer">$1 margaritas for moms · May 10 · Dine-in only · Show a photo of your kids</p>
     <div class="instruction-bar">
-      <strong>For Kaese:</strong>&nbsp; Tap a card to select your preferred approach. Share back to Daniel + Sig.
+      <strong>Kaese:</strong>&nbsp; Tap a card to pick your approach. Send back to Daniel + Sig.
     </div>
   </div>
 </div>
 
 <div class="body">
 
-  <div class="offer-context">
-    <strong>The offer, in every case:</strong> $1 margaritas for moms on May 10, dine-in only. Show a photo of your kids. All 3 locations. The strategies below differ in <em>how</em> the offer is delivered, tracked, and redeemed.
-  </div>
-
   <div class="strategies">
 
-    <!-- WAY 1 -->
-    <div class="strategy" data-index="0" onclick="select(this)">
+    <!-- 1: OPEN ANNOUNCEMENT -->
+    <div class="strategy" data-index="0" onclick="pick(this)">
       <div class="card-top">
         <span class="num">1</span>
         <div class="select-ring"></div>
       </div>
-      <span class="complexity-badge high">Setup required</span>
-      <h2>Popmenu on-premise offer with single-use codes</h2>
-      <p class="desc">Daniel creates the offer inside Popmenu first — as an on-premise offer with a validity window tied to May 10. Popmenu generates a single-use code per guest. The code is attached to the email they receive.</p>
-      <span class="how-label">How it flows</span>
-      <div class="flow">
-        <span class="flow-step">Daniel builds offer in Popmenu</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">System generates unique codes</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">Code sent via email</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">Guest redeems on May 10</span>
+      <span class="approach-badge open">No setup needed</span>
+      <h2>Just announce it — deal happens on premise, no strings</h2>
+      <p class="desc">The post tells people the deal exists. They show up May 10, show a photo of their kids, and the staff honors it. No codes, no sign-up required. The social post is purely awareness.</p>
+      <div class="question-block">
+        <span class="question-label">The post says</span>
+        <span class="question-text">"Moms get $1 margaritas this Mother's Day. Show up May 10, show us a photo of your kids. All 3 locations, dine-in only."</span>
       </div>
-      <div class="pros-cons">
-        <div class="pro">Fully tracked, fraud-proof</div>
-        <div class="con">Most setup time upfront</div>
-        <div class="pro">Popmenu handles redemption</div>
-        <div class="con">Codes must be valid before send</div>
+      <div class="tradeoffs">
+        <div class="tradeoff up">Zero Popmenu setup — post and go</div>
+        <div class="tradeoff up">Simplest experience for the guest</div>
+        <div class="tradeoff down">No list growth, no tracking, no data</div>
+        <div class="tradeoff down">Staff bears the full redemption burden</div>
       </div>
     </div>
 
-    <!-- WAY 2 -->
-    <div class="strategy" data-index="1" onclick="select(this)">
+    <!-- 2: ON-PREMISE OFFER WITH CODES -->
+    <div class="strategy" data-index="1" onclick="pick(this)">
       <div class="card-top">
         <span class="num">2</span>
         <div class="select-ring"></div>
       </div>
-      <span class="complexity-badge medium">Current setup</span>
-      <h2>VIP welcome email — social drives sign-ups</h2>
-      <p class="desc">The offer lives in the existing Popmenu welcome automation. Social posts drive new people to sign up as VIPs on the website. The moment they join, the offer lands in their inbox automatically.</p>
-      <span class="how-label">How it flows</span>
-      <div class="flow">
-        <span class="flow-step">Social post goes live</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">Guest signs up as VIP</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">Welcome email with offer</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">Redeem by May 10</span>
+      <span class="approach-badge coded">Setup required</span>
+      <h2>Build the on-premise offer in Popmenu first — single-use codes</h2>
+      <p class="desc">Daniel creates a Mother's Day on-premise offer inside Popmenu with a May 10 validity window. Popmenu generates a unique code per guest. The code goes out by email. Guests redeem it at the table.</p>
+      <div class="question-block">
+        <span class="question-label">The post says</span>
+        <span class="question-text">"Check your inbox — we sent moms an exclusive $1 margarita code for May 10. Not on the list yet? Sign up and we'll get it to you."</span>
       </div>
-      <div class="pros-cons">
-        <div class="pro">Grows the list permanently</div>
-        <div class="con">Needs welcome email configured</div>
-        <div class="pro">Reusable for future campaigns</div>
-        <div class="con">Requires social post ASAP</div>
+      <div class="tradeoffs">
+        <div class="tradeoff up">Tracked, fraud-proof redemption</div>
+        <div class="tradeoff up">Clean data on who actually came in</div>
+        <div class="tradeoff down">Daniel must build the offer in Popmenu first</div>
+        <div class="tradeoff down">Guests without email miss out unless they sign up</div>
       </div>
     </div>
 
-    <!-- WAY 3 -->
-    <div class="strategy" data-index="2" onclick="select(this)">
+    <!-- 3: VIP LOCKED — THIS OFFER ONLY -->
+    <div class="strategy" data-index="2" onclick="pick(this)">
       <div class="card-top">
         <span class="num">3</span>
         <div class="select-ring"></div>
       </div>
-      <span class="complexity-badge low">Low setup</span>
-      <h2>Announcement only — staff handles redemption</h2>
-      <p class="desc">Communicate the offer on social and via email blast to the existing list — no codes, no automation. The restaurant team handles how margs are given out on the floor. Pure awareness play.</p>
-      <span class="how-label">How it flows</span>
-      <div class="flow">
-        <span class="flow-step">Email + social go out</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">Guest sees the offer</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">Walks in May 10</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">Staff honors it on premise</span>
+      <span class="approach-badge locked-specific">VIP — this offer only</span>
+      <h2>Become a VIP to unlock this specific Mother's Day deal</h2>
+      <p class="desc">The social post makes clear: this $1 marg offer is exclusive to VIPs. Sign up on the website, and the offer lands in your welcome email automatically. The deal is the reason to join.</p>
+      <div class="question-block">
+        <span class="question-label">The post says</span>
+        <span class="question-text">"$1 margaritas for moms on May 10 — but you have to be a VIP to get it. Sign up at saltandlimeaz.com before Sunday. Link in bio."</span>
       </div>
-      <div class="pros-cons">
-        <div class="pro">Fastest to execute</div>
-        <div class="con">No tracking or redemption data</div>
-        <div class="pro">Zero Popmenu config needed</div>
-        <div class="con">Relies entirely on staff</div>
+      <div class="tradeoffs">
+        <div class="tradeoff up">Direct list growth tied to a real incentive</div>
+        <div class="tradeoff up">Offer feels exclusive, not just an announcement</div>
+        <div class="tradeoff down">People who don't sign up can't participate</div>
+        <div class="tradeoff down">Welcome email must have the offer loaded before post goes live</div>
       </div>
     </div>
 
-    <!-- WAY 4 -->
-    <div class="strategy" data-index="3" onclick="select(this)">
+    <!-- 4: VIP LOCKED — ALL OFFERS -->
+    <div class="strategy" data-index="3" onclick="pick(this)">
       <div class="card-top">
         <span class="num">4</span>
         <div class="select-ring"></div>
       </div>
-      <span class="complexity-badge soft">Soft approach</span>
-      <h2>Teaser social + "last call" VIP urgency</h2>
-      <p class="desc">Social posts hint at a Mother's Day surprise without naming the specific offer. The hook is urgency: "become a VIP before May 10 to unlock a surprise." A last-call post goes out close to the date. Intrigue over specifics.</p>
-      <span class="how-label">How it flows</span>
-      <div class="flow">
-        <span class="flow-step">Teaser post — no offer details</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">CTA: become a VIP now</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">Last-call post pre–May 10</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">VIPs get the reveal</span>
+      <span class="approach-badge locked-all">VIP — all offers</span>
+      <h2>Become a VIP to unlock all exclusive offers — Mother's Day is just the hook</h2>
+      <p class="desc">The Mother's Day deal is used as the teaser, but the post sells the VIP program itself. Sign up to get this deal and every future exclusive. The goal is long-term list growth, not just May 10 traffic.</p>
+      <div class="question-block">
+        <span class="question-label">The post says</span>
+        <span class="question-text">"VIPs get all our exclusive deals — including a $1 margarita surprise this Mother's Day. Join the list now and see what you've been missing."</span>
       </div>
-      <div class="pros-cons">
-        <div class="pro">Builds curiosity + urgency</div>
-        <div class="con">Offer less clear upfront</div>
-        <div class="pro">Drives list growth via FOMO</div>
-        <div class="con">Depends on follow-through timing</div>
+      <div class="tradeoffs">
+        <div class="tradeoff up">Builds the list with long-term value framing</div>
+        <div class="tradeoff up">Mother's Day becomes a recurring sign-up driver</div>
+        <div class="tradeoff down">Offer is less specific — lower urgency conversion</div>
+        <div class="tradeoff down">Requires a strong welcome sequence beyond just this deal</div>
       </div>
     </div>
 
   </div>
 
   <div class="summary-bar" id="summary">
-    <p class="summary-title">Your pick</p>
+    <span class="summary-bar-label">Your pick</span>
     <h3 id="summary-title"></h3>
     <p id="summary-desc"></p>
   </div>
@@ -267,24 +235,24 @@ footer{border-top:1px solid var(--border);padding:1.25rem 2rem;max-width:860px;m
 <script>
 const data = [
   {
-    title: "Strategy 1 — Popmenu on-premise offer with single-use codes",
-    desc: "Daniel builds the offer inside Popmenu before anything goes out. Guests receive a unique code by email; they redeem it on May 10. Highest setup cost, highest tracking accuracy."
+    title: "Option 1 — Open announcement, staff redeems on premise",
+    desc: "No Popmenu setup, no codes, no sign-up. Post announces the deal publicly and the team handles it on the floor May 10."
   },
   {
-    title: "Strategy 2 — VIP welcome email driven by social",
-    desc: "Social posts send new people to sign up as VIPs. They get the offer automatically via the welcome email. Grows the list and works for future campaigns too."
+    title: "Option 2 — On-premise offer with single-use codes",
+    desc: "Daniel builds the offer inside Popmenu first. Guests get a unique code by email and redeem it on May 10. Highest tracking, most setup."
   },
   {
-    title: "Strategy 3 — Announcement only, staff redeems on premise",
-    desc: "Email + social announce the deal. No codes, no automation. Restaurant team handles it on the floor. Fastest to launch, no Popmenu config needed."
+    title: "Option 3 — VIP signup locked to this specific deal",
+    desc: "The $1 marg is the exclusive VIP reward. Sign up → get the offer via welcome email → redeem May 10. Welcome email must have the offer loaded before post goes live."
   },
   {
-    title: "Strategy 4 — Teaser + last-call VIP urgency",
-    desc: "Social hints at a Mother's Day surprise without revealing the offer. Urgency drives VIP sign-ups. A last-call post drops just before May 10 with the reveal."
+    title: "Option 4 — VIP signup for all offers (Mother's Day is the hook)",
+    desc: "The post sells the VIP program, not just Mother's Day. The deal is the teaser. Goal is long-term list growth beyond this campaign."
   }
 ];
 
-function select(el) {
+function pick(el) {
   document.querySelectorAll('.strategy').forEach(s => s.classList.remove('selected'));
   el.classList.add('selected');
   const i = parseInt(el.dataset.index);
@@ -292,6 +260,7 @@ function select(el) {
   document.getElementById('summary-title').textContent = data[i].title;
   document.getElementById('summary-desc').textContent = data[i].desc;
   bar.classList.add('visible');
+  bar.scrollIntoView({behavior:'smooth', block:'nearest'});
 }
 </script>
 
