@@ -3,345 +3,202 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mother's Day Strategy · Salt & Lime</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<title>Verde Taqueria — Q1 Performance Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --green:#1D9E75;--green-bright:#5DCAA5;--green-glow:rgba(29,158,117,0.1);
-  --bg:#0e0e0e;--bg2:#161616;--bg3:#1e1e1e;
-  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
-  --text:#f0f0ee;--muted:#888884;--faint:#4a4a46;
-  --blue:#60a5fa;--blue-dim:rgba(96,165,250,0.1);
-  --amber:#fbbf24;--amber-dim:rgba(251,191,36,0.1);
-  --rust:#fb923c;--rust-dim:rgba(251,146,60,0.1);
-  --purple:#a78bfa;--purple-dim:rgba(167,139,250,0.1);
-  --leaf:#97C459;--leaf-dim:rgba(151,196,89,0.12);
-}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;min-height:100vh;font-size:16px}
-
-/* HEADER */
-.site-header{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 2rem;height:54px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.header-left{display:flex;align-items:center;gap:16px}
-.pm-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
-.pm-icon{width:30px;height:30px;background:var(--green);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.pm-icon svg{width:16px;height:16px}
-.pm-wordmark{font-size:15px;font-weight:600;color:var(--text);letter-spacing:-0.01em}
-.hd{width:1px;height:18px;background:var(--border2)}
-.header-doc{font-size:14px;color:var(--muted)}
-.header-pill{font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:5px 12px;border-radius:99px;background:var(--amber-dim);color:var(--amber);border:1px solid rgba(251,191,36,0.25)}
-
-/* HERO */
-.hero{border-bottom:1px solid var(--border);padding:3.5rem 2rem 3rem;background:linear-gradient(180deg,rgba(29,158,117,0.05) 0%,transparent 100%)}
-.hero-inner{max-width:900px;margin:0 auto}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--green-bright);margin-bottom:1.1rem}
-.eyebrow::before{content:'';width:20px;height:2px;background:var(--green);display:inline-block;border-radius:2px}
-h1{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,5vw,3rem);font-weight:400;line-height:1.08;color:var(--text);margin-bottom:0.75rem}
-.hero-sub{font-size:17px;color:var(--muted);margin-bottom:0.5rem;max-width:580px;line-height:1.6}
-.the-offer{font-size:15px;color:var(--green-bright);margin-bottom:1.75rem}
-.instruction-bar{background:var(--amber-dim);border:1px solid rgba(251,191,36,0.2);border-radius:10px;padding:13px 18px;display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--amber);line-height:1.5}
-
-/* BODY */
-.body{max-width:900px;margin:0 auto;padding:2.5rem 2rem 5rem}
-
-/* STEP BLOCK */
-.step-block{margin-bottom:3rem}
-.step-header{display:flex;align-items:center;gap:14px;margin-bottom:1.5rem}
-.step-num{width:36px;height:36px;border-radius:50%;border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:var(--faint);flex-shrink:0;transition:all .2s}
-.step-num.active{border-color:var(--green);color:var(--green)}
-.step-num.done{background:var(--green);border-color:var(--green);color:white}
-.step-titles h2{font-size:22px;font-weight:600;color:var(--text);line-height:1.2}
-.step-titles p{font-size:15px;color:var(--muted);margin-top:3px}
-
-/* LOCKED STATE */
-.step-block.locked .cards{opacity:0.35;pointer-events:none}
-.step-block.locked .step-num{border-color:var(--border);color:var(--faint)}
-.step-block.locked .step-titles h2{color:var(--faint)}
-.step-block.locked .locked-msg{display:flex}
-.locked-msg{display:none;align-items:center;gap:8px;font-size:14px;color:var(--faint);margin-bottom:1rem;padding:11px 14px;border:1px solid var(--border);border-radius:9px;background:var(--bg2)}
-
-/* CARDS */
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:640px){.cards{grid-template-columns:1fr}}
-
-.card{background:var(--bg2);border:2px solid var(--border);border-radius:16px;padding:1.75rem;cursor:pointer;transition:border-color .15s,background .15s;display:flex;flex-direction:column;user-select:none}
-.card:hover{border-color:var(--border2)}
-.card.selected{border-color:var(--green) !important;background:var(--green-glow)}
-.card.selected .card-num{color:var(--green)}
-.card.selected .sel-ring{background:var(--green);border-color:var(--green)}
-.card.selected .sel-ring::after{opacity:1}
-
-.card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1rem}
-.card-num{font-family:'DM Serif Display',serif;font-size:2.2rem;line-height:1;color:var(--faint);transition:color .15s}
-.sel-ring{width:24px;height:24px;border-radius:50%;border:2px solid var(--border2);flex-shrink:0;position:relative;transition:all .15s;margin-top:3px}
-.sel-ring::after{content:'';position:absolute;inset:4px;background:white;border-radius:50%;opacity:0;transition:opacity .15s}
-
-.badge{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:4px 11px;border-radius:99px;display:inline-block;margin-bottom:12px}
-.badge.pm{background:var(--blue-dim);color:var(--blue)}
-.badge.manual{background:var(--leaf-dim);color:var(--leaf)}
-.badge.announce{background:var(--leaf-dim);color:var(--leaf)}
-.badge.vip-this{background:var(--blue-dim);color:var(--blue)}
-.badge.vip-all{background:var(--purple-dim);color:var(--purple)}
-
-.card h3{font-size:17px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.35}
-.card .desc{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:1.25rem}
-
-.sample-block{background:var(--bg3);border:1px solid var(--border);border-left:2px solid var(--border2);border-radius:9px;padding:13px 15px;margin-bottom:1.25rem}
-.sample-label{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:6px;display:block}
-.sample-text{font-size:14px;color:var(--text);line-height:1.65;font-style:italic}
-
-.tradeoffs{display:flex;flex-direction:column;gap:7px;margin-top:auto}
-.t{font-size:14px;padding:9px 12px;border-radius:9px;line-height:1.5;display:flex;gap:8px}
-.t.up{background:rgba(29,158,117,0.07);color:var(--green-bright)}
-.t.up::before{content:'↑';font-weight:700;flex-shrink:0}
-.t.down{background:rgba(251,191,36,0.07);color:var(--amber)}
-.t.down::before{content:'↓';font-weight:700;flex-shrink:0}
-
-/* DIVIDER */
-.step-divider{border:none;border-top:1px solid var(--border);margin:0 0 3rem}
-
-/* SUMMARY */
-.summary{margin-top:2rem;border:2px solid var(--green);border-radius:14px;padding:1.5rem 1.75rem;background:var(--green-glow);display:none}
-.summary.visible{display:block}
-.summary-label{font-size:11px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--green-bright);margin-bottom:10px;display:block}
-.summary-rows{display:flex;flex-direction:column;gap:10px}
-.summary-row{font-size:15px;color:var(--muted);line-height:1.6;padding-left:1rem;border-left:2px solid rgba(29,158,117,0.3)}
-.summary-row strong{color:var(--text);font-weight:600;display:block;margin-bottom:2px}
-
-/* FOOTER */
-footer{border-top:1px solid var(--border);padding:1.5rem 2rem;max-width:900px;margin:0 auto;font-size:13px;color:var(--faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
-.footer-pm{display:flex;align-items:center;gap:6px}
-.footer-dot{width:4px;height:4px;background:var(--green);border-radius:50%}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden}
+body{font-family:'DM Sans',sans-serif;background:#0f0f0f;color:#f0f0f0;height:100vh}
+.deck{width:100%;height:100vh;position:relative}
+.progress{position:absolute;top:0;left:0;height:2px;background:#E8622A;transition:width 0.4s ease;z-index:100}
+.dots{position:absolute;left:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:100}
+.dot{width:5px;height:5px;border-radius:50%;background:#2a2a2a;cursor:pointer;transition:all 0.2s}
+.dot.active{background:#E8622A;transform:scale(1.5)}
+.slide{position:absolute;top:0;left:0;width:100%;height:100%;padding:5vh 6vw 8vh 5vw;display:flex;flex-direction:column;justify-content:center;opacity:0;transform:translateX(30px);transition:all 0.32s ease;pointer-events:none}
+.slide.active{opacity:1;transform:translateX(0);pointer-events:all}
+.tag{font-size:10px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#E8622A;margin-bottom:12px}
+h1{font-family:'Playfair Display',serif;font-size:clamp(40px,6vw,72px);font-weight:700;line-height:1.05;color:#f5f5f5;margin-bottom:8px}
+h2{font-family:'Playfair Display',serif;font-size:clamp(24px,3.5vw,38px);font-weight:700;color:#f5f5f5;margin-bottom:20px}
+.divider{width:36px;height:2px;background:#E8622A;margin:16px 0}
+.subtitle{font-size:14px;color:#444;font-weight:300}
+.cards{display:grid;gap:12px;margin-bottom:14px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:#1a1a1a;border:0.5px solid #2a2a2a;border-radius:12px;padding:20px 20px 18px}
+.card-label{font-size:10px;color:#555;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px}
+.card-value{font-size:clamp(28px,4vw,46px);font-weight:500;color:#E8622A;line-height:1}
+.card-value.sm{font-size:clamp(16px,2vw,26px);padding-top:6px}
+.card-sub{font-size:12px;color:#444;margin-top:7px}
+.card-sub .up{color:#22c55e;font-weight:500}
+.card-sub .hi{color:#E8622A;font-weight:500}
+.insight{background:#161616;border:0.5px solid #2a2a2a;border-left:2px solid #E8622A;border-radius:10px;padding:14px 18px;margin-bottom:10px}
+.insight p{font-size:14px;font-weight:500;color:#e0e0e0;margin-bottom:3px}
+.insight span{font-size:12px;color:#555}
+.opp{background:#1a1a1a;border:0.5px solid #2a2a2a;border-radius:12px;padding:18px 20px;margin-bottom:10px}
+.opp-title{font-size:15px;font-weight:500;color:#E8622A;margin-bottom:8px}
+.opp-row{display:flex;gap:8px;margin-bottom:4px}
+.opp-tag{font-size:9px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#555;min-width:56px;padding-top:2px}
+.opp-text{font-size:12px;color:#888;line-height:1.5}
+.dish-list{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.dish{display:flex;align-items:center;justify-content:space-between;background:#1a1a1a;border:0.5px solid #2a2a2a;border-radius:8px;padding:12px 16px}
+.dish-name{font-size:13px;font-weight:500;color:#e0e0e0;min-width:180px}
+.dish-orders{font-size:13px;color:#E8622A;font-weight:500;min-width:90px;text-align:right}
+.dish-bar-wrap{flex:1;margin:0 16px;height:4px;background:#2a2a2a;border-radius:2px}
+.dish-bar{height:4px;background:#E8622A;border-radius:2px}
+.email-row{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:10px;align-items:center;padding:10px 0;border-bottom:0.5px solid #1f1f1f}
+.email-row.header{border-bottom:0.5px solid #2a2a2a;padding-bottom:8px;margin-bottom:4px}
+.email-row span{font-size:11px;color:#555;text-transform:uppercase;letter-spacing:0.08em}
+.email-name{font-size:13px;font-weight:500;color:#e0e0e0}
+.email-stat{font-size:13px;color:#E8622A;font-weight:500}
+.email-rev{font-size:13px;color:#22c55e;font-weight:500}
+.footer{position:absolute;bottom:20px;left:5vw;right:6vw;display:flex;align-items:center;justify-content:space-between;border-top:0.5px solid #1a1a1a;padding-top:12px}
+.footer-client{font-size:10px;color:#2a2a2a;font-weight:500;letter-spacing:0.1em;text-transform:uppercase}
+.footer-page{font-size:10px;color:#2a2a2a}
+.nav{position:absolute;bottom:22px;right:6vw;display:flex;gap:8px}
+.btn{background:#1a1a1a;color:#888;border:0.5px solid #2a2a2a;padding:7px 16px;border-radius:6px;font-size:11px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s}
+.btn:hover{border-color:#E8622A;color:#E8622A}
+.btn.primary{background:#E8622A;color:#fff;border-color:#E8622A}
+.btn.primary:hover{background:#cf5522}
+.cover-logo{display:flex;align-items:center;gap:6px;margin-bottom:32px}
+.logo-mark{width:16px;height:16px;background:#E8622A;border-radius:3px}
+.logo-text{font-size:10px;font-weight:500;color:#2a2a2a;letter-spacing:0.14em;text-transform:uppercase}
 </style>
 </head>
 <body>
+<div class="deck">
+  <div class="progress" id="progress"></div>
+  <div class="dots" id="dots"></div>
 
-<header class="site-header">
-  <div class="header-left">
-    <a class="pm-logo" href="https://popmenu.com" target="_blank" rel="noopener">
-      <div class="pm-icon">
-        <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11 7H7a2 2 0 0 0-2 2v10h2v-4h4a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zm0 6H7V9h4v4zm8-6h-4a2 2 0 0 0-2 2v10h2v-4h2v4h2V9a2 2 0 0 0-2-2zm0 6h-4V9h4v4z"/>
-        </svg>
-      </div>
-      <span class="pm-wordmark">Popmenu</span>
-    </a>
-    <div class="hd"></div>
-    <span class="header-doc">Campaign Brief</span>
+  <!-- SLIDE 1: Cover -->
+  <div class="slide active">
+    <div class="cover-logo"><div class="logo-mark"></div><span class="logo-text">Popmenu</span></div>
+    <div class="tag">Q1 Performance Report · All Locations</div>
+    <h1>Verde<br>Taqueria</h1>
+    <div class="divider"></div>
+    <div class="subtitle">Jan 1 – Apr 19, 2026 · Atlanta, GA · 2 Locations</div>
+    <div class="footer"><span class="footer-client">Verde Taqueria</span><span class="footer-page">1 / 7</span></div>
   </div>
-  <div>
-    <span class="header-pill">Kaese — 2 decisions</span>
-  </div>
-</header>
 
-<div class="hero">
-  <div class="hero-inner">
-    <div class="eyebrow">Salt &amp; Lime · Mother's Day 2026</div>
-    <h1>Two decisions,<br>then we build it</h1>
-    <p class="hero-sub">Pick how the offer gets redeemed first. Then decide what the social post actually does. Both choices shape what Sig creates and what Daniel sets up.</p>
-    <p class="the-offer">$1 margaritas for moms · May 10 · Dine-in only · Show a photo of your kids</p>
-    <div class="instruction-bar">
-      <strong>Kaese:</strong>&nbsp; Work through Step 1 then Step 2. Send back to Daniel + Sig.
+  <!-- SLIDE 2: What Worked -->
+  <div class="slide">
+    <div class="tag">Highlights</div>
+    <h2>What Worked This Quarter</h2>
+    <div class="cards g4" style="margin-bottom:16px">
+      <div class="card"><div class="card-label">Total Revenue</div><div class="card-value" style="font-size:clamp(24px,3vw,38px)">$95.3K</div><div class="card-sub">online ordering</div></div>
+      <div class="card"><div class="card-label">ROI on Platform</div><div class="card-value">298x</div><div class="card-sub">$478/mo cost</div></div>
+      <div class="card"><div class="card-label">Avg Order Value</div><div class="card-value" style="font-size:clamp(24px,3vw,38px)">$354</div><div class="card-sub">2,374 orders total</div></div>
+      <div class="card"><div class="card-label">Total Marketing Rev</div><div class="card-value" style="font-size:clamp(22px,2.8vw,34px)">$226K</div><div class="card-sub">all channels</div></div>
     </div>
+    <div class="insight"><p>⭐ Star of the quarter: "Welcome VIP – Get 20% Off" offer</p><span>742 redemptions · $38,138 in order value · highest converting offer by 5x</span></div>
+    <div class="insight"><p>Email open rates 33–35% above industry average across all campaigns</p><span>Mass: 52.9% avg open · Automated: 54.5% avg open · industry benchmark ~40%</span></div>
+    <div class="footer"><span class="footer-client">Verde Taqueria</span><span class="footer-page">2 / 7</span></div>
+  </div>
+
+  <!-- SLIDE 3: Content & Social -->
+  <div class="slide">
+    <div class="tag">Content & Social</div>
+    <h2>Social Performance</h2>
+    <div class="cards g3" style="margin-bottom:14px">
+      <div class="card"><div class="card-label">Total Impressions</div><div class="card-value">215K</div><div class="card-sub">all locations</div></div>
+      <div class="card"><div class="card-label">Total Followers</div><div class="card-value">6,017</div><div class="card-sub">across platforms</div></div>
+      <div class="card"><div class="card-label">Top Post Reach</div><div class="card-value">1,508</div><div class="card-sub">Brand awareness post</div></div>
+    </div>
+    <div class="insight"><p>🏆 Best content format: Event-tied posts</p><span>Masters Week post (Apr 7) hit 1,348 impressions · Seasonal hooks outperform generic posts every time</span></div>
+    <div class="insight"><p>🍹 Bottled margaritas to-go = highest visual appeal content</p><span>Lifestyle format (product + lifestyle shot) drives more saves and shares than food-only posts</span></div>
+    <div class="footer"><span class="footer-client">Verde Taqueria</span><span class="footer-page">3 / 7</span></div>
+  </div>
+
+  <!-- SLIDE 4: Top Dishes -->
+  <div class="slide">
+    <div class="tag">Menu Performance</div>
+    <h2>Top Selling Items</h2>
+    <div style="margin-bottom:10px;font-size:11px;color:#444;text-transform:uppercase;letter-spacing:0.1em">Last 180 days · all locations</div>
+    <div class="dish-list">
+      <div class="dish"><span class="dish-name">🧀 Jalapeño Queso</span><div class="dish-bar-wrap"><div class="dish-bar" style="width:100%"></div></div><span class="dish-orders">1,993 orders</span></div>
+      <div class="dish"><span class="dish-name">🌮 Chicken Taco</span><div class="dish-bar-wrap"><div class="dish-bar" style="width:87%"></div></div><span class="dish-orders">1,737 orders</span></div>
+      <div class="dish"><span class="dish-name">🍤 Sweet Chili Shrimp Taco</span><div class="dish-bar-wrap"><div class="dish-bar" style="width:85%"></div></div><span class="dish-orders">1,688 orders</span></div>
+      <div class="dish"><span class="dish-name">🥩 Ground Beef Taco</span><div class="dish-bar-wrap"><div class="dish-bar" style="width:83%"></div></div><span class="dish-orders">1,646 orders</span></div>
+      <div class="dish"><span class="dish-name">🔥 Dirty Bird Taco</span><div class="dish-bar-wrap"><div class="dish-bar" style="width:71%"></div></div><span class="dish-orders">1,419 orders</span></div>
+    </div>
+    <div class="insight"><p>Jalapeño Queso is the #1 item — it's not even a taco. High add-on potential.</p><span>Feature it in content and email as a "must-have starter" to increase avg order value</span></div>
+    <div class="footer"><span class="footer-client">Verde Taqueria</span><span class="footer-page">4 / 7</span></div>
+  </div>
+
+  <!-- SLIDE 5: Email -->
+  <div class="slide">
+    <div class="tag">Email & Campaigns</div>
+    <h2>Email Performance</h2>
+    <div class="cards g3" style="margin-bottom:16px">
+      <div class="card"><div class="card-label">Total Delivered</div><div class="card-value">221K</div><div class="card-sub">mass + automated</div></div>
+      <div class="card"><div class="card-label">Mass Open Rate</div><div class="card-value">52.9%</div><div class="card-sub"><span class="up">+33%</span> vs industry</div></div>
+      <div class="card"><div class="card-label">Auto Open Rate</div><div class="card-value">54.5%</div><div class="card-sub"><span class="up">+35%</span> vs industry</div></div>
+    </div>
+    <div class="email-row header">
+      <span>Campaign</span><span>Open Rate</span><span>Click Rate</span><span>Revenue</span>
+    </div>
+    <div class="email-row"><span class="email-name">Welcome Follower</span><span class="email-stat">59%</span><span class="email-stat">3%</span><span class="email-rev">$12,134</span></div>
+    <div class="email-row"><span class="email-name">Offer Reminder</span><span class="email-stat">52%</span><span class="email-stat">2%</span><span class="email-rev">$6,819</span></div>
+    <div class="email-row"><span class="email-name">Online Order Review</span><span class="email-stat">56%</span><span class="email-stat">2%</span><span class="email-rev">$5,187</span></div>
+    <div class="email-row"><span class="email-name">We Miss You</span><span class="email-stat">49%</span><span class="email-stat">1%</span><span class="email-rev">$3,809</span></div>
+    <div class="footer"><span class="footer-client">Verde Taqueria</span><span class="footer-page">5 / 7</span></div>
+  </div>
+
+  <!-- SLIDE 6: Platform -->
+  <div class="slide">
+    <div class="tag">Platform Activity</div>
+    <h2>Popmenu Platform</h2>
+    <div class="cards g3" style="margin-bottom:14px">
+      <div class="card"><div class="card-label">Orders Placed</div><div class="card-value">2,374</div><div class="card-sub">99.3% pickup</div></div>
+      <div class="card"><div class="card-label">Website Sessions</div><div class="card-value">7,232</div><div class="card-sub">$13.18 rev/session</div></div>
+      <div class="card"><div class="card-label">Cost Per Order</div><div class="card-value">$0.20</div><div class="card-sub">platform cost only</div></div>
+    </div>
+    <div class="cards g2">
+      <div class="card"><div class="card-label">Active Offers (live)</div><div class="card-value sm">VIP 20% · $5 off · 10%</div><div class="card-sub"><span class="hi">$38K</span> from VIP offer alone</div></div>
+      <div class="card"><div class="card-label">SMS / MMS Sent</div><div class="card-value sm">73.8K SMS · 11 MMS</div><div class="card-sub">Smart msg open rate: <span class="hi">40.8%</span></div></div>
+    </div>
+    <div class="footer"><span class="footer-client">Verde Taqueria</span><span class="footer-page">6 / 7</span></div>
+  </div>
+
+  <!-- SLIDE 7: Growth Opportunities -->
+  <div class="slide">
+    <div class="tag">What's Next</div>
+    <h2>Growth Opportunities</h2>
+    <div class="opp">
+      <div class="opp-title">01 · Turn seasonal content into a recurring series</div>
+      <div class="opp-row"><span class="opp-tag">Evidence</span><span class="opp-text">Masters Week post (Apr 7) and "March into Flavor" mass message ($5,175) show event-tied content consistently outperforms evergreen posts.</span></div>
+      <div class="opp-row"><span class="opp-tag">Action</span><span class="opp-text">Build a monthly content calendar around local Atlanta events + food holidays. One themed post + one matching email per month.</span></div>
+    </div>
+    <div class="opp">
+      <div class="opp-title">02 · Make Jalapeño Queso the hero of every email</div>
+      <div class="opp-row"><span class="opp-tag">Evidence</span><span class="opp-text">#1 ordered item at 1,993 orders — more than any taco. It's a natural upsell trigger that increases avg order value when featured.</span></div>
+      <div class="opp-row"><span class="opp-tag">Action</span><span class="opp-text">Add a "Don't forget your Queso" section to Offer Reminder and Order Review emails. A/B test featuring it in the next mass message.</span></div>
+    </div>
+    <div class="opp">
+      <div class="opp-title">03 · Unlock catering — it's at 0.7% with zero promotion</div>
+      <div class="opp-row"><span class="opp-tag">Evidence</span><span class="opp-text">Only 17 catering orders (0.7% of total). The Big Game Catering promo generated $442 from just 1 redemption — demand exists.</span></div>
+      <div class="opp-row"><span class="opp-tag">Action</span><span class="opp-text">Launch a dedicated catering email to the 6,017 follower list. Target corporate Atlanta with a "Taco Tuesday office lunch" angle.</span></div>
+    </div>
+    <div class="footer"><span class="footer-client">Verde Taqueria</span><span class="footer-page">7 / 7</span></div>
+  </div>
+
+  <div class="nav">
+    <button class="btn" id="prevBtn" onclick="navigate(-1)">← Back</button>
+    <button class="btn primary" id="nextBtn" onclick="navigate(1)">Next →</button>
   </div>
 </div>
-
-<div class="body">
-
-  <!-- STEP 1 -->
-  <div class="step-block" id="step1">
-    <div class="step-header">
-      <div class="step-num active" id="num1">1</div>
-      <div class="step-titles">
-        <h2>How does the offer actually get redeemed?</h2>
-        <p>Popmenu handles it with codes, or the restaurant team handles it on the floor.</p>
-      </div>
-    </div>
-
-    <div class="cards">
-
-      <div class="card" data-step="1" data-index="0" onclick="pick(this)">
-        <div class="card-top">
-          <span class="card-num">A</span>
-          <div class="sel-ring"></div>
-        </div>
-        <span class="badge pm">Popmenu offer</span>
-        <h3>Build the on-premise offer in Popmenu — single-use codes per guest</h3>
-        <p class="desc">Daniel creates the Mother's Day offer inside Popmenu with a May 10 validity window. The system generates a unique code per guest. That code goes out by email and is scanned or entered at the table to redeem.</p>
-        <div class="sample-block">
-          <span class="sample-label">What this requires</span>
-          <span class="sample-text">Daniel builds the offer in Popmenu before anything goes live. Code must be valid and attached to the email send before the campaign launches.</span>
-        </div>
-        <div class="tradeoffs">
-          <div class="t up">Tracked redemption — Popmenu records who used it</div>
-          <div class="t up">Fraud-proof, one code per person</div>
-          <div class="t down">Setup time required before anything can go out</div>
-        </div>
-      </div>
-
-      <div class="card" data-step="1" data-index="1" onclick="pick(this)">
-        <div class="card-top">
-          <span class="card-num">B</span>
-          <div class="sel-ring"></div>
-        </div>
-        <span class="badge manual">No setup needed</span>
-        <h3>Announce it and let the restaurant team handle redemption on premise</h3>
-        <p class="desc">No codes, no Popmenu configuration. The deal is communicated and staff honors it at the table when guests show up May 10 with a photo of their kids. Simple, fast to launch.</p>
-        <div class="sample-block">
-          <span class="sample-label">What this requires</span>
-          <span class="sample-text">Briefing the staff before Mother's Day so they know the deal and how to apply it at the POS. No digital setup needed.</span>
-        </div>
-        <div class="tradeoffs">
-          <div class="t up">No Popmenu setup — campaign can go live immediately</div>
-          <div class="t up">No friction for the guest</div>
-          <div class="t down">No tracking, no redemption data</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <hr class="step-divider">
-
-  <!-- STEP 2 -->
-  <div class="step-block locked" id="step2">
-    <div class="step-header">
-      <div class="step-num" id="num2">2</div>
-      <div class="step-titles">
-        <h2>What does the social post do?</h2>
-        <p>Just tell people, or use the moment to grow the VIP list.</p>
-      </div>
-    </div>
-
-    <div class="locked-msg">
-      ← Complete Step 1 first
-    </div>
-
-    <div class="cards">
-
-      <div class="card" data-step="2" data-index="0" onclick="pick(this)">
-        <div class="card-top">
-          <span class="card-num">A</span>
-          <div class="sel-ring"></div>
-        </div>
-        <span class="badge announce">Open announcement</span>
-        <h3>Just announce it — tell everyone the deal exists, no CTA beyond "come in"</h3>
-        <p class="desc">The post puts the offer out in the world. No sign-up required, no VIP wall. Anyone who sees it can walk in May 10 and redeem. Pure reach play.</p>
-        <div class="sample-block">
-          <span class="sample-label">Caption direction</span>
-          <span class="sample-text">"Moms get $1 margaritas this Mother's Day 🌿 Show up May 10, show us a photo of your kids. All 3 locations, dine-in only."</span>
-        </div>
-        <div class="tradeoffs">
-          <div class="t up">Maximum reach, zero barrier</div>
-          <div class="t down">No list growth, no new VIPs captured</div>
-        </div>
-      </div>
-
-      <div class="card" data-step="2" data-index="1" onclick="pick(this)">
-        <div class="card-top">
-          <span class="card-num">B</span>
-          <div class="sel-ring"></div>
-        </div>
-        <span class="badge vip-this">VIP — this deal only</span>
-        <h3>Gate this specific offer behind VIP signup — the deal is the reason to join</h3>
-        <p class="desc">The post makes clear: $1 margaritas are exclusive to VIPs. Sign up on the website, and the offer lands in the welcome email automatically. The Mother's Day deal is the hook.</p>
-        <div class="sample-block">
-          <span class="sample-label">Caption direction</span>
-          <span class="sample-text">"$1 margaritas for moms May 10 — but only for VIPs. Sign up at saltandlimeaz.com before Sunday to unlock it. Link in bio."</span>
-        </div>
-        <div class="tradeoffs">
-          <div class="t up">Direct list growth, every sign-up is a lead</div>
-          <div class="t down">People who don't sign up can't participate</div>
-        </div>
-      </div>
-
-      <div class="card" data-step="2" data-index="2" onclick="pick(this)">
-        <div class="card-top">
-          <span class="card-num">C</span>
-          <div class="sel-ring"></div>
-        </div>
-        <span class="badge vip-all">VIP — all offers</span>
-        <h3>Use Mother's Day as the hook to sell the whole VIP program, not just this deal</h3>
-        <p class="desc">The post promotes becoming a VIP in general. Mother's Day is the timely reason to join now. Goal is building a list that keeps paying off campaign after campaign — not just May 10 traffic.</p>
-        <div class="sample-block">
-          <span class="sample-label">Caption direction</span>
-          <span class="sample-text">"VIPs get exclusive deals all year — and we have something special lined up for Mother's Day. Join the list now and find out. Link in bio."</span>
-        </div>
-        <div class="tradeoffs">
-          <div class="t up">Long-term list value, not just one campaign</div>
-          <div class="t down">Less specific — lower urgency, lower conversion</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- SUMMARY -->
-  <div class="summary" id="summary">
-    <span class="summary-label">Your picks</span>
-    <div class="summary-rows">
-      <div class="summary-row" id="s1"><strong>Step 1 — Redemption</strong><span id="s1-text"></span></div>
-      <div class="summary-row" id="s2" style="display:none"><strong>Step 2 — Social post</strong><span id="s2-text"></span></div>
-    </div>
-  </div>
-
-</div>
-
-<footer>
-  <div class="footer-pm">
-    <div class="footer-dot"></div>
-    <span>Popmenu &nbsp;·&nbsp; Salt &amp; Lime Modern Mexican Grill</span>
-  </div>
-  <span>Daniel Rodrigues &nbsp;·&nbsp; April 2026</span>
-</footer>
 
 <script>
-const labels = {
-  1: {
-    0: "Popmenu on-premise offer — Daniel builds it with single-use codes, tracked redemption.",
-    1: "No setup — restaurant team handles redemption on the floor on May 10."
-  },
-  2: {
-    0: "Open announcement — tell everyone, no sign-up required, just come in.",
-    1: "VIP gate — this specific deal is exclusive to VIPs. Social drives sign-ups for the Mother's Day offer.",
-    2: "VIP program — Mother's Day is the hook to grow the list long-term. Deal is the teaser."
-  }
-};
-
-let step1Done = false;
-
-function pick(el) {
-  const step = parseInt(el.dataset.step);
-  const idx = parseInt(el.dataset.index);
-
-  document.querySelectorAll(`.card[data-step="${step}"]`).forEach(c => c.classList.remove('selected'));
-  el.classList.add('selected');
-
-  if (step === 1) {
-    step1Done = true;
-    document.getElementById('num1').classList.add('done');
-    document.getElementById('num1').textContent = '✓';
-    document.getElementById('step2').classList.remove('locked');
-    document.getElementById('num2').classList.add('active');
-    document.getElementById('s1-text').textContent = labels[1][idx];
-    document.getElementById('summary').classList.add('visible');
-    document.getElementById('s2').style.display = 'none';
-    setTimeout(() => {
-      document.getElementById('step2').scrollIntoView({behavior:'smooth', block:'start'});
-    }, 200);
-  }
-
-  if (step === 2) {
-    document.getElementById('num2').classList.add('done');
-    document.getElementById('num2').textContent = '✓';
-    document.getElementById('s2-text').textContent = labels[2][idx];
-    document.getElementById('s2').style.display = 'block';
-    setTimeout(() => {
-      document.getElementById('summary').scrollIntoView({behavior:'smooth', block:'nearest'});
-    }, 200);
-  }
-}
+let cur=0;
+const slides=document.querySelectorAll('.slide');
+const total=slides.length;
+const dotsEl=document.getElementById('dots');
+const prog=document.getElementById('progress');
+for(let i=0;i<total;i++){const d=document.createElement('div');d.className='dot'+(i===0?' active':'');d.onclick=()=>go(i);dotsEl.appendChild(d);}
+function go(n){if(n<0||n>=total)return;slides[cur].classList.remove('active');cur=n;slides[cur].classList.add('active');document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===cur));prog.style.width=((cur+1)/total*100)+'%';document.getElementById('prevBtn').style.opacity=cur===0?'0.3':'1';document.getElementById('nextBtn').textContent=cur===total-1?'Done ✓':'Next →';}
+function navigate(d){go(cur+d);}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')navigate(1);if(e.key==='ArrowLeft')navigate(-1);});
+go(0);
 </script>
-
 </body>
 </html>
